@@ -30,7 +30,7 @@ struct View{
   char* color[20];
 };
 
-void initView();
+void initView(View *v);
   
 void caseView(View v, Case c);
 void gameView(View v, GameModel g);
