@@ -10,8 +10,10 @@ int initModel(GameModel *g){
     }
   }
   g->alive = 1;
+
   g->cursor->target = NULL;
   g->cursor.carrying = 0;
+
   newline(g, 4);
   newline(g, 4);
   /* recherche max */
