@@ -13,7 +13,7 @@ typedef struct Case Case;
 struct Cursor{
   Case* target;
   int carrying;                 /* bool */
-}
+};
 
 struct GameModel{
   struct Case cases[7][10];
@@ -27,10 +27,10 @@ typedef struct GameModel GameModel;
 
 int initModel(GameModel *g);
 
-void tick(GameModel *g, double t);
+void tick(GameModel *g, float t);
 int gravity_move(GameModel *g);
 int move(Case* c1, Case* c2);     /* -1 if not possible */
 int fusion(Case *c1, Case *c2);   /* -1 " ",
                                    nombre sinon*/
-void newline(GameModel *g, const int max);
+void newline(GameModel *g);
 

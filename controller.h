@@ -1,4 +1,6 @@
 #include "common.h"
+#include "model.h"
+#include <unistd.h>             /* usleep */
 
 #define KEY_RIGHT 67
 #define KEY_LEFT 68
@@ -10,8 +12,5 @@ struct Controller{
   double waittime;          /* in ms */
 };
 
-int controller_main(GameModel *g);
-int get_key();
-void key_handling(GameModel *g, int key);
-void switchmodeCursor(GameModel *g);
-void moveCursor(GameModel *g);
+void controller_main(GameModel *g);
+void moveCursor(GameModel *g, int dx, int dy);
