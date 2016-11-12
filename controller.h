@@ -1,14 +1,13 @@
 #include "common.h"
 
-#define KEY_RIGHT
-#define KEY_LEFT
-#define KEY_DOWN
-#define KEY_UP
-#define KEY_SELECT
+#define KEY_RIGHT 67
+#define KEY_LEFT 68
+#define KEY_DOWN 66
+#define KEY_UP 65 
+#define KEY_SELECT 32
 
 struct Controller{
   double waittime;          /* in ms */
-
 };
 
 int controller_main(GameModel *g);
