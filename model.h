@@ -9,14 +9,10 @@ struct Case{
 };
 typedef struct Case Case;
 
-struct Cursor{
-  int x, y;
-  int carrying;                 /* bool */
-};
 
 struct GameModel{
   struct Case cases[7][10];
-  struct Cursor sel;
+  Case* cursor;
   int max;
   int alive;
   double timeleft;

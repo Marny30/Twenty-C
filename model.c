@@ -1,6 +1,7 @@
 #include "model.h"
 
 int initModel(GameModel *g){
+  srand(time(NULL));
   for (int i=0; i<7; i++){
     for (int j=0; j<10; j++){
       g->cases[i][j].x = 0;
@@ -9,8 +10,7 @@ int initModel(GameModel *g){
     }
   }
   g->alive = 1;
-  srand (time (NULL));
-  
+  g->cursor = NULL;
   newline(g, 4);
   newline(g, 4);
   /* recherche max */
@@ -44,10 +44,14 @@ void newline(GameModel *g, const int max){
     }
   }
   /* création nouvelle ligne */
+  int r;
   for (int i=0; i<7; i++){
-    g->cases[i][9].nombre = rand()%max;
+    do{ /* On génère des nombres différents de ceux présent au dessus */
+      r = rand()%max;
+      g->cases[i][9].nombre = r;
+    } while (g->cases[i][8].nombre == r);
   }
-  gravity_move(g);
+  //gravity_move(g);
 }
 
 int gravity_move(GameModel *g){
