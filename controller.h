@@ -8,6 +8,7 @@
 
 struct Controller{
   double waittime;          /* in ms */
+
 };
 
 int controller_main(GameModel *g);
